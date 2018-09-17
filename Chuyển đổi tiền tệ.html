@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+    <script>
+        function convertMoney() {
+            let a = document.getElementById("a").value;
+            let result = 0;
+            let gap = "đ";
+            if (document.getElementById("b").value === "1") {
+                result = a * 23000;
+            } else {
+                result = a / 23000;
+                gap = "$";
+            }
+            document.getElementById("result").innerHTML = result + gap;
+        }
+    </script>
+</head>
+<body>
+<form id="f">
+    <input type="number" id="a" width="100" />
+    <select id="b">
+        <option value="1">USD to VND</option>
+        <option value="2">VND to USD</option>
+    </select>
+    <button type="button" onclick="convertMoney()">Convert</button>
+</form>
+<p id="result"></p>
+</body>
+</html>
